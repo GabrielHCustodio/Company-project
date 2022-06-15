@@ -15,19 +15,19 @@
 
         <div class="d-flex">
             <div class="list-group menu-esquerda">
-                <router-link class="list-group-item list-group-item-action" to="/home">
+                <router-link class="list-group-item list-group-item-action" to="/home/dashboard" exact-active-class="active">
                   <i class="bi bi-speedometer2"></i> Dashboard
                 </router-link>
-                <router-link class="list-group-item list-group-item-action" to="/home/sales">
+                <router-link class="list-group-item list-group-item-action" to="/home/sales" exact-active-class="active">
                   <i class="bi bi-cart"></i> Vendas
                 </router-link>
-                <router-link class="list-group-item list-group-item-action" to="/home/sales/leads">
+                <router-link class="list-group-item list-group-item-action" to="/home/sales/leads" exact-active-class="active">
                   <i class="bi bi-caret-right"></i> Leads
                 </router-link>
-                <router-link class="list-group-item list-group-item-action" to="/home/sales/contracts">
+                <router-link class="list-group-item list-group-item-action" to="/home/sales/contracts" exact-active-class="active">
                   <i class="bi bi-caret-right"></i> Contratos
                 </router-link>
-                <router-link class="list-group-item list-group-item-action" to="/home/services">
+                <router-link class="list-group-item list-group-item-action" to="/home/services" exact-active-class="active">
                   <i class="bi bi-card-checklist"></i> Serviços
                 </router-link>
             </div>
@@ -67,6 +67,8 @@ export default {
 .list-group-item {
     border-top: none;
     border-right: none;
+    display: flex;
+    justify-content: left;
 }
 
 .bi{

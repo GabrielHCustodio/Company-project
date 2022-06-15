@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import Contracts from '@/components/sales/Contracts.vue'
+import Dashboard from '@/components/dashboard/Dashboard.vue'
 import HomeView from '../views/Home.vue'
 import Leads from '@/components/sales/Leads.vue'
 import Login from '../views/Login.vue'
@@ -21,7 +22,8 @@ const routes = [
         { path: 'leads', component: Leads },
         { path: 'contracts', component: Contracts }
       ] },
-      { path: 'services', component: Services }
+      { path: 'services', component: Services },
+      { path: 'dashboard', component: Dashboard }
     ]
   },
   {
