@@ -24,10 +24,10 @@
                 <router-link class="list-group-item list-group-item-action" to="/home/sales/leads" exact-active-class="active">
                   <i class="bi bi-caret-right"></i> Leads
                 </router-link>
-                <router-link class="list-group-item list-group-item-action" to="/home/sales/contracts" exact-active-class="active">
+                <router-link class="list-group-item list-group-item-action" :to="{ name: 'contracts' }" exact-active-class="active">
                   <i class="bi bi-caret-right"></i> Contratos
                 </router-link>
-                <router-link class="list-group-item list-group-item-action" to="/home/services" exact-active-class="active">
+                <router-link class="list-group-item list-group-item-action" :to="{ name: 'services' }" exact-active-class="active">
                   <i class="bi bi-card-checklist"></i> Serviços
                 </router-link>
             </div>

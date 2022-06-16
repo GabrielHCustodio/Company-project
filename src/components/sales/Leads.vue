@@ -15,7 +15,7 @@
                 <td>{{ d.name }}</td>
                 <td>{{ d.telephone }}</td>
                 <td>
-                    <router-link to="/home/sales/leads" class="btn btn-sm btn-primary">
+                    <router-link :to="{ name: 'lead' , params: { id: d.id } }" class="btn btn-sm btn-primary">
                         <i class="bi bi-pencil-square" style="cursor:pointer"></i>
                     </router-link>
                 </td>
@@ -25,24 +25,12 @@
 </template>
 
 <script>
+import ApiMixin from "@/mixins/ApiMixin"
 export default {
     name: "Leads",
-    data() {
-        return {
-            data: null
-        }
-    },
-    methods: {
-        getDataApi() {
-            fetch('http://localhost:3000/leads')
-            .then( response => response.json() )
-            .then( response => {
-                this.data = response
-            })
-        }
-    },
+    mixins: [ ApiMixin ],
     created() {
-        this.getDataApi()
+        this.getDataApi('http://localhost:3000/leads')
     }
 }
 </script>
