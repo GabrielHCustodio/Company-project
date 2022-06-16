@@ -4,5 +4,10 @@
         {"id": 2, "name": "Matheus Augusto", "telephone": "35 99876-5432"},
         {"id": 3, "name": "Guilherme Siqueira", "telephone": "35 99988-7766"},
         {"id": 4, "name": "Marcos Alves", "telephone": "35 98877-6655"}
+    ],
+    "services": [
+        {"id": "1", "service": "Seguro de vida", "icon": "seguro_vida.png" , "description": "Maiores detalhes do seguro de vida" },
+        {"id": "2", "service": "Seguro residencial", "icon": "seguro_residencial.png" , "description": "Maiores detalhes do seguro residencial" },
+        {"id": "3", "service": "Seguro auto", "icon": "seguro_auto.png" , "description": "Maiores detalhes do seguro auto" }
     ]
 }

@@ -45,6 +45,10 @@
 
             </div>
         </div>
+
+        <div class="footer">
+            <router-view name="footer" />
+        </div>
     </div>
 </template>
 
@@ -74,5 +78,13 @@ export default {
 .bi{
     width: 20px;
     height: 20px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #ccc;
 }
 </style>

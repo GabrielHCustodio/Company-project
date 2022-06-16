@@ -1,5 +1,5 @@
 <template>
-    <h1>Vendas</h1>
+    <h2>Vendas</h2>
     <hr>
     <router-view />
 </template>
