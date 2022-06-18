@@ -9,5 +9,12 @@
         {"id": "1", "service": "Seguro de vida", "icon": "seguro_vida.png" , "description": "Maiores detalhes do seguro de vida" },
         {"id": "2", "service": "Seguro residencial", "icon": "seguro_residencial.png" , "description": "Maiores detalhes do seguro residencial" },
         {"id": "3", "service": "Seguro auto", "icon": "seguro_auto.png" , "description": "Maiores detalhes do seguro auto" }
-    ]
+    ],
+    "contracts": [
+		{ "id": 1, "leadId": 1, "serviceId": 1, "startDate": "2022-01-01 00:00:00 ", "endDate": "2022-12-31 23:59:59"},
+		{ "id": 2, "leadId": 4, "serviceId": 2, "startDate": "2021-01-01 00:00:00 ", "endDate": "2021-12-31 23:59:59"},
+		{ "id": 3, "leadId": 2, "serviceId": 2, "startDate": "2020-01-01 00:00:00 ", "endDate": "2020-12-31 23:59:59"},
+		{ "id": 4, "leadId": 2, "serviceId": 3, "startDate": "2022-01-01 00:00:00 ", "endDate": "2022-12-31 23:59:59"},
+		{ "id": 5, "leadId": 3, "serviceId": 3, "startDate": "2021-01-01 00:00:00 ", "endDate": "2021-12-31 23:59:59"}
+	]
 }

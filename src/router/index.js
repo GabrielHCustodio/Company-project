@@ -23,13 +23,13 @@ const routes = [
     component: HomeView,
     children: [
       { path: 'sales', component: Sales, children: [
-        { path: '', component: StandardSales },
+        { path: '', component: StandardSales, name: 'sales' },
         { path: 'leads', component: Leads , name: 'leads'},
-        { path: 'leads/:id', component: Lead , name: 'lead'},
+        { path: 'leads/:id', component: Lead, alias: '/l/:id', name: 'lead'},
         { path: 'contracts', component: Contracts , name: 'contracts'}
       ] },
-      { path: 'services', component: Services , name: 'services', children: [
-        { path: ':id' , component: Service , name: 'service'}
+      { path: 'services', component: Services, name: 'services', children: [
+        { path: ':id' , component: Service, alias: '/s/:id',  name: 'service'}
       ]},
       { path: 'dashboard', components: 
         {
@@ -42,7 +42,11 @@ const routes = [
   {
     path: '/login',
     component: Login
-  }
+  },
+  { path: '/redirection-1', redirect: '/home/services' },
+  { path: '/redirection-2', redirect: { name: 'leads'} },
+  { path: '/redirection-3', redirect: { name: 'sales'} },
+  { path: '/:catchAll(.*)*', redirect: '/' }
 ]
 
 const router = createRouter({
