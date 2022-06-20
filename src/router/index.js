@@ -25,7 +25,7 @@ const routes = [
       { path: 'sales', component: Sales, children: [
         { path: '', component: StandardSales, name: 'sales' },
         { path: 'leads', component: Leads , name: 'leads'},
-        { path: 'leads/:id', component: Lead, alias: '/l/:id', name: 'lead'},
+        { path: 'leads/:id', props: true, component: Lead, alias: '/l/:id', name: 'lead'},
         { path: 'contracts', component: Contracts , name: 'contracts'}
       ] },
       { path: 'services', component: Services, name: 'services', children: [

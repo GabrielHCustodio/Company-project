@@ -6,19 +6,33 @@
         <div class="row">
           <div class="col-6">
             <label class="form-label">ID Contrato:</label>
-            <input type="text" class="form-control" v-model="searchForm.id_like"/>
+            <input
+              type="text"
+              class="form-control"
+              v-model="searchForm.id_like"
+            />
           </div>
           <div class="col-6">
             <label class="form-label">Data início:</label>
             <div class="input-group">
-              <input type="date" class="form-control" v-model="searchForm.startDate_gte"/>
-              <input type="date" class="form-control" v-model="searchForm.startDate_lte"/>
+              <input
+                type="date"
+                class="form-control"
+                v-model="searchForm.startDate_gte"
+              />
+              <input
+                type="date"
+                class="form-control"
+                v-model="searchForm.startDate_lte"
+              />
             </div>
           </div>
         </div>
       </div>
       <div class="card-footer">
-        <button type="button" class="btn btn-primary" @click="search">Pesquisar</button>
+        <button type="button" class="btn btn-primary" @click="search">
+          Pesquisar
+        </button>
       </div>
     </div>
 
@@ -49,37 +63,30 @@
 import ApiMixin from "@/mixins/ApiMixin";
 export default {
   name: "Contracts",
+  mixins: [ApiMixin],
   data() {
     return {
       relationalParams: "_expand=lead&_expand=service",
       searchForm: {
-        id_like: '',
-        startDate_gte: '',
-        startDate_lte: ''
-      }
+        id_like: "",
+        startDate_gte: "",
+        startDate_lte: "",
+      },
     };
   },
   methods: {
     search() {
-        Object.keys(this.searchForm).forEach( key => {
-            if(this.searchForm[key] == '') delete this.searchForm[key]
-        })
-
-        const queryParams = new URLSearchParams(this.searchForm).toString();
-        const url = `http://localhost:3000/contracts?${this.relationalParams}&${queryParams}`;
-        this.getDataApi(url);
-    }
+      const url = `http://localhost:3000/contracts?${this.relationalParams}`;
+      this.getDataApi(url, this.searchForm);
+    },
   },
-  mixins: [ApiMixin],
   created() {
-    const queryParams = new URLSearchParams(this.$route.query).toString();
-    const url = `http://localhost:3000/contracts?${this.relationalParams}&${queryParams}`;
-    this.getDataApi(url);
+    const url = `http://localhost:3000/contracts?${this.relationalParams}`;
+    this.getDataApi(url, this.$route.query);
   },
   beforeRouteUpdate(to, from, next) {
-    const queryParams = new URLSearchParams(to.query).toString();
-    const url = `http://localhost:3000/contracts?${this.relationalParams}&${queryParams}`;
-    this.getDataApi(url);
+    const url = `http://localhost:3000/contracts?${this.relationalParams}`;
+    this.getDataApi(url, to.query);
     next();
   },
 };
