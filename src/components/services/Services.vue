@@ -20,12 +20,13 @@
 </template>
 
 <script>
-import ApiMixin from '@/mixins/ApiMixin'
+import ApiMixin from "@/mixins/ApiMixin"
 export default {
     name: "Services",
-    mixins: [ ApiMixin ],
+    mixins: [ApiMixin],
     created() {
-        this.getDataApi('http://localhost:3000/services')
+        const url = `http://localhost:3000/services`
+        this.getDataApi(url)
     }
 }
 </script>

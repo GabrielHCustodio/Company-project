@@ -5,10 +5,10 @@ export default {
         }
     },
     methods: {
-        getDataApi(url, queryParams) {
+        getDataApi(url, queryParams = {}) {
 
             Object.keys(queryParams).forEach( key => {
-                if (queryParams[key] == '') delete queryParams[key]
+                if(queryParams[key] == '') delete queryParams[key]
             })
 
             const urlQueryParams = new URLSearchParams(queryParams).toString();

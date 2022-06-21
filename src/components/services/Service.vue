@@ -15,11 +15,12 @@ export default {
     name: 'Service',
     mixins: [ ApiMixin ],
     created() {
-        this.getDataApi(`http://localhost:3000/services/${this.$route.params.id}`)
+        const url = `http://localhost:3000/services/${this.$route.params.id}`
+        this.getDataApi(url)
     },
     beforeRouteUpdate(to, from, next) {
-        
-        if(to.params.id != undefined) { this.getDataApi(`http://localhost:3000/services/${to.params.id}`) }
+        const url = `http://localhost:3000/services/${to.params.id}`
+        if(to.params.id != undefined) { this.getDataApi(url) }
         next()
     }
 }
