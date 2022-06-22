@@ -81,24 +81,24 @@
   "adm": [
     {
       "id": 1,
-      "email": "gabriel.ghc00@gmail.com",
-      "password": "G15090016m"
+      "email": "gabriel@gmail.com",
+      "password": "123456"
     },
     {
       "id": 2,
       "email": "joao_kleber@gmail.com",
-      "password": "Jk182378"
+      "password": "123456"
     }
   ],
   "users": [
     {
       "name": "Gabriel",
-      "email": "bielriquecustodio@gmail.com",
+      "email": "biel@gmail.com",
       "id": 1
     },
     {
       "name": "Silvana",
-      "email": "silvana.andradea@hotmail.com",
+      "email": "sil@hotmail.com",
       "id": 2
     }
   ]

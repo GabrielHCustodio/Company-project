@@ -8,7 +8,7 @@
                     <li class="nav-item"> 
                         <router-link class="nav-link" :to="{ path:'/', hash: '#section_1'}">Seção 1</router-link>
                     </li>
-                    <li class="nav-item"> 
+                    <li class="nav-item">
                         <router-link class="nav-link" :to="{ path:'/', hash: '#section_2'}">Seção 2</router-link>
                     </li>
                     <li class="nav-item"> 
