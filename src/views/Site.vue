@@ -33,12 +33,12 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="Nome">
+                                <input type="text" class="form-control" v-model="name" placeholder="Nome">
                             </div>
                             <div class="mb-3">
-                                <input type="email" class="form-control" placeholder="E-mail">
+                                <input type="email" class="form-control" v-model="email" placeholder="E-mail">
                             </div>
-                            <button class="btn btn-primary">Me inscrever</button>
+                            <button class="btn btn-primary" @click="subscribe">Me inscrever</button>
                         </div>
                     </div>
                 </div>
@@ -76,6 +76,40 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    name: "Site",
+    data() {
+        return {
+            name: null,
+            email: null
+        }
+    },
+    methods: {
+        async subscribe() {
+            const user = {
+                name: this.name,
+                email: this.email
+            }
+
+            const userJson = JSON.stringify(user)
+
+            const req = await fetch('http://localhost:3000/users', {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: userJson
+            })
+
+            const res = await req.json()
+            console.log(res)
+
+            this.nome = ""
+            this.email = ""
+        }
+    }
+}
+</script>
 
 <style scoped>
 .menu-superior {

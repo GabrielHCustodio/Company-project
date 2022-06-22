@@ -37,7 +37,9 @@ const routes = [
   {
     path: '/home',
     component: HomeView,
-    meta: { reqAuthorization : true},
+    beforeEnter() {
+      console.log('Guarda de rota beforeEnter')
+    },
     children: [
       { path: 'sales', 
         component: Sales, 
@@ -48,9 +50,6 @@ const routes = [
           { path: 'leads', 
             component: Leads, 
             name: 'leads',
-            beforeEnter() {
-              console.log('Guarda de rota beforeEnter')
-            }
           },
           { path: 'leads/:id', 
             props: true, 
@@ -108,7 +107,7 @@ const router = createRouter({
   routes
 })
 
-router.beforeEach( () => {
+/*router.beforeEach( () => {
   console.log('Guarda global beforeEach')
 })
 
@@ -118,6 +117,6 @@ router.afterEach( () => {
 
 router.beforeResolve( () => {
   console.log('Guarda de rota beforeResolve')
-})
+})*/
 
 export default router

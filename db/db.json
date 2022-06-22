@@ -1,20 +1,105 @@
 {
-    "leads": [
-        {"id": 1, "name": "Gabriel Henrique", "telephone": "35 98765-4321"},
-        {"id": 2, "name": "Matheus Augusto", "telephone": "35 99876-5432"},
-        {"id": 3, "name": "Guilherme Siqueira", "telephone": "35 99988-7766"},
-        {"id": 4, "name": "Marcos Alves", "telephone": "35 98877-6655"}
-    ],
-    "services": [
-        {"id": "1", "service": "Seguro de vida", "icon": "seguro_vida.png" , "description": "Maiores detalhes do seguro de vida" },
-        {"id": "2", "service": "Seguro residencial", "icon": "seguro_residencial.png" , "description": "Maiores detalhes do seguro residencial" },
-        {"id": "3", "service": "Seguro auto", "icon": "seguro_auto.png" , "description": "Maiores detalhes do seguro auto" }
-    ],
-    "contracts": [
-		{ "id": 1, "leadId": 1, "serviceId": 1, "startDate": "2022-01-01 00:00:00 ", "endDate": "2022-12-31 23:59:59"},
-		{ "id": 2, "leadId": 4, "serviceId": 2, "startDate": "2021-01-01 00:00:00 ", "endDate": "2021-12-31 23:59:59"},
-		{ "id": 3, "leadId": 2, "serviceId": 2, "startDate": "2020-01-01 00:00:00 ", "endDate": "2020-12-31 23:59:59"},
-		{ "id": 4, "leadId": 2, "serviceId": 3, "startDate": "2022-01-01 00:00:00 ", "endDate": "2022-12-31 23:59:59"},
-		{ "id": 5, "leadId": 3, "serviceId": 3, "startDate": "2021-01-01 00:00:00 ", "endDate": "2021-12-31 23:59:59"}
-	]
+  "leads": [
+    {
+      "id": 1,
+      "name": "Gabriel Henrique",
+      "telephone": "35 98765-4321"
+    },
+    {
+      "id": 2,
+      "name": "Matheus Augusto",
+      "telephone": "35 99876-5432"
+    },
+    {
+      "id": 3,
+      "name": "Guilherme Siqueira",
+      "telephone": "35 99988-7766"
+    },
+    {
+      "id": 4,
+      "name": "Marcos Alves",
+      "telephone": "35 98877-6655"
+    }
+  ],
+  "services": [
+    {
+      "id": "1",
+      "service": "Seguro de vida",
+      "icon": "seguro_vida.png",
+      "description": "Maiores detalhes do seguro de vida"
+    },
+    {
+      "id": "2",
+      "service": "Seguro residencial",
+      "icon": "seguro_residencial.png",
+      "description": "Maiores detalhes do seguro residencial"
+    },
+    {
+      "id": "3",
+      "service": "Seguro auto",
+      "icon": "seguro_auto.png",
+      "description": "Maiores detalhes do seguro auto"
+    }
+  ],
+  "contracts": [
+    {
+      "id": 1,
+      "leadId": 1,
+      "serviceId": 1,
+      "startDate": "2022-01-01 00:00:00 ",
+      "endDate": "2022-12-31 23:59:59"
+    },
+    {
+      "id": 2,
+      "leadId": 4,
+      "serviceId": 2,
+      "startDate": "2021-01-01 00:00:00 ",
+      "endDate": "2021-12-31 23:59:59"
+    },
+    {
+      "id": 3,
+      "leadId": 2,
+      "serviceId": 2,
+      "startDate": "2020-01-01 00:00:00 ",
+      "endDate": "2020-12-31 23:59:59"
+    },
+    {
+      "id": 4,
+      "leadId": 2,
+      "serviceId": 3,
+      "startDate": "2022-01-01 00:00:00 ",
+      "endDate": "2022-12-31 23:59:59"
+    },
+    {
+      "id": 5,
+      "leadId": 3,
+      "serviceId": 3,
+      "startDate": "2021-01-01 00:00:00 ",
+      "endDate": "2021-12-31 23:59:59"
+    }
+  ],
+  "adm": [
+    {
+      "id": 1,
+      "email": "gabriel.ghc00@gmail.com",
+      "password": "G15090016m"
+    },
+    {
+      "id": 2,
+      "email": "joao_kleber@gmail.com",
+      "password": "Jk182378"
+    }
+  ],
+  "users": [
+    {
+      "name": "Gabriel",
+      "email": "bielriquecustodio@gmail.com",
+      "id": 1
+    },
+    {
+      "name": "Silvana",
+      "email": "silvana.andradea@hotmail.com",
+      "id": 2
+    }
+  ]
 }

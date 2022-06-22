@@ -19,10 +19,10 @@
                     <p class="card-header">Entrar</p>
                     <div class="card-body">
                         <div class="mb-3">
-                            <input type="email" class="form-control" placeholder="E-mail">
+                            <input type="email" class="form-control" v-model="email" placeholder="E-mail">
                         </div>
                         <div class="mb-3">
-                            <input type="password" class="form-control" placeholder="Senha">
+                            <input type="password" class="form-control" v-model="password" placeholder="Senha">
                         </div>
                         <button class="btn btn-primary" @click="navigateTo">Login</button>
                     </div>
@@ -35,10 +35,25 @@
 <script>
 export default {
   name: 'Login',
+  data() {
+    return {
+        email: null,
+        password:  null,
+        adm: {}
+    }
+  },
   methods: {
     navigateTo() {
-      this.$router.push('/home')
+        const url = 'http://localhost:3000/adm'
+
+        fetch(url)
+        .then( response => response.json() )
+        .then( response => {
+            this.adm = response
+        })
+
+        this.$router.push('/home')
     }
   }
 }
-</script>
+</script> 
