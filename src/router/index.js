@@ -37,9 +37,6 @@ const routes = [
   {
     path: '/home',
     component: HomeView,
-    beforeEnter() {
-      console.log('Guarda de rota beforeEnter')
-    },
     children: [
       { path: 'sales', 
         component: Sales, 

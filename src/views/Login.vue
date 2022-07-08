@@ -19,10 +19,10 @@
                     <p class="card-header">Entrar</p>
                     <div class="card-body">
                         <div class="mb-3">
-                            <input type="email" class="form-control" v-model="email" placeholder="E-mail">
+                            <input type="email" name="email" class="form-control" v-model="email" placeholder="E-mail">
                         </div>
                         <div class="mb-3">
-                            <input type="password" class="form-control" v-model="password" placeholder="Senha">
+                            <input type="password" class="form-control" v-model="password" minlength="6" maxlength="8" placeholder="Senha">
                         </div>
                         <button class="btn btn-primary" @click="navigateTo">Login</button>
                     </div>
@@ -37,22 +37,38 @@ export default {
   name: 'Login',
   data() {
     return {
-        email: null,
-        password:  null,
-        adm: {}
+        email: '',
+        password:  ''
     }
   },
   methods: {
     navigateTo() {
-        const url = 'http://localhost:3000/adm'
+        if(this.validateForm()) {
+            const url = 'http://localhost:3000/adm'
 
-        fetch(url)
-        .then( response => response.json() )
-        .then( response => {
-            this.adm = response
-        })
+            fetch(url)
+            .then( response => response.json() )
+            .then( response => {
+                let adm = response
+                adm.map(a => {
+                    if(a.email === this.email && a.password === this.password) {
+                        this.$router.push('/home')
+                    }else {
+                        alert('Usuario invalido')
+                    }
+                })
+            })
+        }
+        else {
+            alert('Campo não preenchido')
+        }
 
-        this.$router.push('/home')
+    },
+    validateForm() {
+        let validate = true
+        if(this.email === '') validate = false
+        if(this.password === '') validate = false
+        return validate
     }
   }
 }
